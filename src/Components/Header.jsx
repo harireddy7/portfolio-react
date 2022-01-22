@@ -3,10 +3,10 @@ import { useColorMode } from '@chakra-ui/color-mode';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, HStack, Text } from '@chakra-ui/layout';
 
-const Navbar = () => {
+const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box p={5} borderBottom='1px'>
+    <Box p={5} background='white' shadow='md' borderRadius='md'>
         <HStack justifyContent='space-around'>
           <div>&lt;HARI KOTHA /&gt;</div>
           <HStack as='nav' spacing='16' fontWeight='600' letterSpacing='4px' color='#858585'>
@@ -22,4 +22,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Header;

@@ -1,12 +1,14 @@
 import { Box } from '@chakra-ui/layout';
 import { useColorMode } from '@chakra-ui/color-mode';
 import './App.css';
-import Navbar from './Components/Navbar';
+import Header from './Components/Header';
+import About from './Components/About';
 
 const App = () => {
   return (
-    <Box>
-      <Navbar />
+    <Box p={5} background='gray.50'>
+      <Header />
+      <About />
     </Box>
   )
 }
