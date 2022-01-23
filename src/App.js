@@ -5,12 +5,16 @@ import Header from './Components/Header';
 import About from './Components/About';
 
 const App = () => {
-  return (
-    <Box p={5} background='gray.50'>
-      <Header />
-      <About />
-    </Box>
-  )
-}
+	const { colorMode } = useColorMode();
+	return (
+		<Box
+			p={{ base: 0, sm: 5 }}
+			background={colorMode === 'dark' ? 'black' : 'gray.50'}
+		>
+			<Header />
+			<About />
+		</Box>
+	);
+};
 
 export default App;
