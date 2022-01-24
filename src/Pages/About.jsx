@@ -1,12 +1,11 @@
 import { Image } from '@chakra-ui/image';
-import { useColorMode } from '@chakra-ui/color-mode';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Box, Center, Text, VStack } from '@chakra-ui/layout';
 import coverImg from '../Assets/thumb.jpeg';
 
 const About = () => {
-	const { colorMode } = useColorMode();
 	return (
-		<Box minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }} background={colorMode === 'dark' ? 'black' : 'gray.50'} p={5}>
+		<Box minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }} background={useColorModeValue('gray.50', 'black')} p={5}>
 			<Center minHeight='calc(100vh - 250px)'>
 				<VStack>
 					<Image

@@ -1,24 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const theme = extendTheme({
-  fonts: {
-    body: 'Outfit',
-    heading: 'Outfit',
-  },
-})
+	fonts: {
+		body: 'Outfit',
+		heading: 'Outfit',
+	},
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-  <ChakraProvider theme={ theme }>
-    <App />
-  </ChakraProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<ChakraProvider theme={theme}>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</ChakraProvider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,63 +1,68 @@
 import { Button, IconButton } from '@chakra-ui/button';
-import { useColorMode } from '@chakra-ui/color-mode';
+import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, HStack, Text } from '@chakra-ui/layout';
 import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+
+const ROUTES = [
+  { to: '/', label: 'HOME' },
+  { to: '/skills', label: 'SKILLS' },
+  { to: '/projects', label: 'PROJECTS' },
+  { to: '/resume', label: 'RESUME' },
+  { to: '/contact', label: 'CONTACT' },
+]
 
 const Header = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
+  const navColor = useColorModeValue('#000', '#fff');
+
 	return (
-		<Box p={5} background={colorMode === 'dark' ? 'gray.900' : 'white'} shadow='md' borderRadius={{ base: 0, sm: 'md' }}>
+		<Box
+			p={5}
+			background={useColorModeValue('white', 'gray.900')}
+			shadow='md'
+			borderRadius={{ base: 0, sm: 'md' }}
+		>
 			<HStack justifyContent={{ base: 'space-between', md: 'space-around' }}>
+				<Text>&lt;HARI KOTHA /&gt;</Text>
 
-        <Text>&lt;HARI KOTHA /&gt;</Text>
-
-        <HStack justifyContent='space-between' spacing={{ base: 4, md: 12 }}>
-          <HStack
-            as='nav'
-            display={{ base: 'none', md: 'block' }}
-            spacing={{ md: '6', lg: '10', xl: '16' }}
-            fontWeight='600'
-            letterSpacing={{ md: '2px', lg: '4px' }}
-            color='#858585'
-          >
-            <Text
-              as='a'
-              fontSize='small'
-              href='/'
-              color={colorMode === 'light' ? '#000' : '#fff'}
-            >
-              HOME
-            </Text>
-            <Text as='a' fontSize='small' href='/'>
-              SKILLS
-            </Text>
-            <Text as='a' fontSize='small' href='/'>
-              PROJECTS
-            </Text>
-            <Text as='a' fontSize='small' href='/'>
-              RESUME
-            </Text>
-            <Text as='a' fontSize='small' href='/'>
-              CONTACT
-            </Text>
-          </HStack>
-          <Button onClick={toggleColorMode}>
-            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-          </Button>
-          <Box display={{ md: 'none' }}>
-            <Menu>
-              <MenuButton as={IconButton} icon={<HamburgerIcon />} />
-              <MenuList>
-                <MenuItem>HOME</MenuItem>
-                <MenuItem>SKILLS</MenuItem>
-                <MenuItem>PROJECTS</MenuItem>
-                <MenuItem>RESUME</MenuItem>
-                <MenuItem>CONTACT</MenuItem>
-              </MenuList>
-            </Menu>
-          </Box>
-        </HStack>
+				<HStack justifyContent='space-between' spacing={{ base: 4, md: 12 }}>
+					<HStack
+						as='nav'
+						display={{ base: 'none', md: 'block' }}
+						spacing={{ md: '6', lg: '10', xl: '16' }}
+					>
+						{
+              ROUTES.map(({ to, label }) => (
+                <Text
+                  as={NavLink}
+                  to={to}
+                  fontSize='small'
+                  letterSpacing={{ md: '2px', lg: '4px' }}
+                  style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })}
+                >
+                  {label}
+                </Text>
+              ))
+            }
+					</HStack>
+					<Button onClick={toggleColorMode}>
+						{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+					</Button>
+					<Box display={{ md: 'none' }}>
+						<Menu>
+							<MenuButton as={IconButton} icon={<HamburgerIcon />} />
+							<MenuList>
+                {
+                  ROUTES.map(({ to, label }) => (
+                    <MenuItem as={NavLink} to={to} style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })}>{label}</MenuItem>
+                  ))
+                }
+							</MenuList>
+						</Menu>
+					</Box>
+				</HStack>
 			</HStack>
 		</Box>
 	);

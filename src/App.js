@@ -1,18 +1,32 @@
+import { lazy, Suspense } from 'react';
 import { Box } from '@chakra-ui/layout';
-import { useColorMode } from '@chakra-ui/color-mode';
+import { Routes, Route } from 'react-router-dom';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 import './App.css';
 import Header from './Components/Header';
-import About from './Components/About';
+import About from './Pages/About';
+
+const SkillsLazy = lazy(() => import('./Pages/Skills'));
+const ProjectsLazy = lazy(() => import('./Pages/Projects'));
+const ContactLazy = lazy(() => import('./Pages/Contact'));
 
 const App = () => {
-	const { colorMode } = useColorMode();
 	return (
 		<Box
 			p={{ base: 0, sm: 5 }}
-			background={colorMode === 'dark' ? 'black' : 'gray.50'}
+			background={useColorModeValue('gray.50', 'black')}
 		>
 			<Header />
-			<About />
+			<Suspense fallback={<div>Loading...</div>}>
+				<Routes>
+					<Route path='/' element={<About />} />
+					<Route path='/skills' element={<SkillsLazy />} />
+					<Route path='/projects' element={<ProjectsLazy />} />
+					<Route path='/resume' element={<div>Resume</div>} />
+					<Route path='/contact' element={<ContactLazy />} />
+					<Route path="*" element={<div>NotFound</div>} />
+				</Routes>
+			</Suspense>
 		</Box>
 	);
 };
