@@ -1,9 +1,10 @@
 import { Image } from '@chakra-ui/image';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Box, Center, Text, VStack } from '@chakra-ui/layout';
-import coverImg from '../Assets/thumb.jpeg';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const About = () => {
+	useDocumentTitle();
 	return (
 		<Box minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }} background={useColorModeValue('gray.50', 'black')} p={5}>
 			<Center minHeight='calc(100vh - 250px)'>
@@ -11,7 +12,7 @@ const About = () => {
 					<Image
 						borderRadius='full'
 						boxSize='120px'
-						src={coverImg}
+						src='/images/thumb.jpeg'
 						alt='hari kotha cover'
 					/>
 					<Text fontSize={{ base: '3xl', md: '7xl', }} fontWeight='600'>

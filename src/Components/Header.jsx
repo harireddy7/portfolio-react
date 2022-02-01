@@ -41,6 +41,7 @@ const Header = () => {
                   fontSize='small'
                   letterSpacing={{ md: '2px', lg: '4px' }}
                   style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })}
+				  key={label}
                 >
                   {label}
                 </Text>
@@ -56,7 +57,7 @@ const Header = () => {
 							<MenuList>
                 {
                   ROUTES.map(({ to, label }) => (
-                    <MenuItem as={NavLink} to={to} style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })}>{label}</MenuItem>
+                    <MenuItem as={NavLink} to={to} style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })} key={label}>{label}</MenuItem>
                   ))
                 }
 							</MenuList>
