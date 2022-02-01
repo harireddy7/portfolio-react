@@ -47,7 +47,7 @@ const Skills = () => {
 			background={useColorModeValue('gray.50', 'black')}
 		>
 			<Center p={5} pt={{ md: 8 }}>
-				Here are the technologies i'm worked on and familiar with!
+				Here are the technologies i worked on and familiar with!
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>
 				<Center>
