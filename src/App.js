@@ -4,11 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import './App.css';
 import Header from './Components/Header';
-import About from './Pages/About';
-import Projects from './Pages/Projects';
 
-const SkillsLazy = lazy(() => import('./Pages/Skills'));
 const AboutLazy = lazy(() => import('./Pages/About'));
+const SkillsLazy = lazy(() => import('./Pages/Skills'));
 const ProjectsLazy = lazy(() => import('./Pages/Projects'));
 const ContactLazy = lazy(() => import('./Pages/Contact'));
 
@@ -21,9 +19,9 @@ const App = () => {
 			<Header />
 			<Suspense fallback={<div>Loading...</div>}>
 				<Routes>
-					<Route path='/' element={<Projects />} />
+					<Route path='/' element={<AboutLazy />} />
 					<Route path='/skills' element={<SkillsLazy />} />
-					<Route path='/about' element={<About />} />
+					<Route path='/projects' element={<ProjectsLazy />} />
 					<Route path='/resume' element={<div>Resume</div>} />
 					<Route path='/contact' element={<ContactLazy />} />
 					<Route path="*" element={<div>NotFound</div>} />

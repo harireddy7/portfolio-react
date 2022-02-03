@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const ROUTES = [
   { to: '/', label: 'HOME' },
   { to: '/skills', label: 'SKILLS' },
-  { to: '/about', label: 'ABOUT' },
+  { to: '/projects', label: 'PROJECTS' },
   { to: '/resume', label: 'RESUME' },
   { to: '/contact', label: 'CONTACT' },
 ]

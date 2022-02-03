@@ -8,10 +8,7 @@ const About = () => {
 	return (
 		<Box minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }} background={useColorModeValue('gray.50', 'black')} p={5}>
 			<Center minHeight='calc(100vh - 250px)'>
-        <video autoPlay loop muted playsInline>
-          <source src="/images/loading.webm" type="video/webm" />
-          <source src="/images/loading.mp4" type="video/mp4" />
-        </video>
+        Projects
 			</Center>
 		</Box>
 	);
