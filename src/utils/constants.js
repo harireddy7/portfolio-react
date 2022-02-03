@@ -16,3 +16,27 @@ export const PAGE_TITLES = {
     projects: 'Projects | Hari Kotha',
     contact: 'Contact | Hari Kotha',
 };
+
+export const PROJECTS = [
+	{
+		title: 'Tic-Tac-Toe',
+		stack: ['HTML5', 'CSS3', 'Javascript'],
+		thumbnail: 'tictactoejs.png',
+		github: 'https://github.com/harireddy7/TicTacToe',
+		live: 'https://tictactoejs-dev.netlify.app/'
+	},
+	{
+		title: 'key user solutions',
+		stack: ['Javascript', 'React.js', 'Material UI'],
+		thumbnail: 'keyusersolutions2.png',
+		github: 'https://github.com/harireddy7/KeyUserSolutions',
+		live: 'https://keyusersolutions.netlify.app/'
+	},
+	{
+		title: 'WeatherJs',
+		stack: ['HTML5', 'CSS3', 'Bootstrap', 'Javascript'],
+		thumbnail: 'weatherjs.png',
+		github: 'https://github.com/harireddy7/WeatherJs',
+		live: 'https://weatherjs-dev.netlify.app/'
+	},
+]
