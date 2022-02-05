@@ -8,6 +8,7 @@ import Header from './Components/Header';
 const AboutLazy = lazy(() => import('./Pages/About'));
 const SkillsLazy = lazy(() => import('./Pages/Skills'));
 const ProjectsLazy = lazy(() => import('./Pages/Projects'));
+const ResumeLazy = lazy(() => import('./Pages/Resume'));
 const ContactLazy = lazy(() => import('./Pages/Contact'));
 
 const App = () => {
@@ -22,9 +23,9 @@ const App = () => {
 					<Route path='/' element={<AboutLazy />} />
 					<Route path='/skills' element={<SkillsLazy />} />
 					<Route path='/projects' element={<ProjectsLazy />} />
-					<Route path='/resume' element={<div>Resume</div>} />
+					<Route path='/resume' element={<ResumeLazy />} />
 					<Route path='/contact' element={<ContactLazy />} />
-					<Route path="*" element={<div>NotFound</div>} />
+					<Route path='*' element={<div>NotFound</div>} />
 				</Routes>
 			</Suspense>
 		</Box>
@@ -32,7 +33,6 @@ const App = () => {
 };
 
 export default App;
-
 
 /*
 	1. Refactor theme colors & standarize text and background colors

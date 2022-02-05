@@ -58,7 +58,11 @@ const Card = ({ title, stack, thumbnail, ...links }) => {
 						borderRadius='8px'
 					/>
 				</AspectRatio>
-				<HStack width='100%' justifyContent='flex-end' style={{ marginTop: '1rem' }}>
+				<HStack
+					width='100%'
+					justifyContent='flex-end'
+					style={{ marginTop: '1rem' }}
+				>
 					{buttonLinks.map((btnLink) => (
 						<Link
 							href={links[btnLink.link]}

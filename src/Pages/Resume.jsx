@@ -3,7 +3,7 @@ import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Box, Center, Text, VStack } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 
-const Contact = () => {
+const Resume = () => {
 	useDocumentTitle();
 	return (
 		<Box
@@ -32,4 +32,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default Resume;
