@@ -87,7 +87,7 @@ const Projects = () => {
 			background={useColorModeValue('gray.50', 'black')}
 		>
 			<Center p={5} pt={{ md: 8 }}>
-				<Text textAlign='center'>
+				<Text>
 					Here are the{' '}
 					<Text
 						display='inline'
