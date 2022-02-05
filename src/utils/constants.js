@@ -28,7 +28,7 @@ export const PROJECTS = [
 	{
 		title: 'key user solutions',
 		stack: ['Javascript', 'React.js', 'Material UI'],
-		thumbnail: 'keyusersolutions2.png',
+		thumbnail: 'keyusersolutions.jpg',
 		github: 'https://github.com/harireddy7/KeyUserSolutions',
 		live: 'https://keyusersolutions.netlify.app/'
 	},
@@ -38,5 +38,12 @@ export const PROJECTS = [
 		thumbnail: 'weatherjs.png',
 		github: 'https://github.com/harireddy7/WeatherJs',
 		live: 'https://weatherjs-dev.netlify.app/'
+	},
+	{
+		title: 'Chat App',
+		stack: ['React.js', 'Node.js', 'Socket.io'],
+		thumbnail: 'under-dev.svg',
+		github: '#',
+		live: '#'
 	},
 ]
