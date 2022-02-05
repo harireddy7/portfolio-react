@@ -1,12 +1,6 @@
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
-import {
-	Box,
-	Center,
-	SimpleGrid,
-	Stack,
-	Text,
-} from '@chakra-ui/layout';
+import { Box, Center, SimpleGrid, Stack, Text } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { SKILLS } from '../utils/constants';
 
@@ -28,11 +22,7 @@ const Card = ({ label, icon }) => {
 			}}
 		>
 			<Stack direction='row' align='center' spacing={3}>
-				<Image
-					boxSize='50px'
-					src={`/images/${icon}`}
-					alt={icon}
-				/>
+				<Image boxSize='50px' src={`/images/${icon}`} alt={icon} />
 				<Text>{label}</Text>
 			</Stack>
 		</Box>
@@ -48,16 +38,25 @@ const Skills = () => {
 		>
 			<Center p={5} pt={{ md: 8 }}>
 				<Text>
-					Here are the <Text display='inline' borderBottomColor='gray.500' borderBottomWidth='2px' pb={1}>technologies</Text> i worked on and familiar with!
+					Here are the{' '}
+					<Text
+						display='inline'
+						borderBottomColor='gray.500'
+						borderBottomWidth='2px'
+						pb='0.1rem'
+					>
+						technologies
+					</Text>{' '}
+					i worked on and familiar with!
 				</Text>
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>
 				<Center>
 					<SimpleGrid
 						spacing={{ base: '5', md: '8' }}
-						columns={{ base: 1, sm:2, lg: 3 }}
+						columns={{ base: 1, sm: 2, lg: 3 }}
 					>
-						{SKILLS.map(skill => (
+						{SKILLS.map((skill) => (
 							<Card {...skill} key={skill.label} />
 						))}
 					</SimpleGrid>

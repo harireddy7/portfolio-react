@@ -93,7 +93,7 @@ const Projects = () => {
 						display='inline'
 						borderBottomColor='gray.500'
 						borderBottomWidth='2px'
-						pb={1}
+						pb='0.1rem'
 					>
 						projects
 					</Text>{' '}
