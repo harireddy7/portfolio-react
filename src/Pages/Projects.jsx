@@ -10,7 +10,6 @@ import {
 	Text,
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
-import { Button } from '@chakra-ui/react';
 import { Tag } from '@chakra-ui/tag';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { PROJECTS } from '../utils/constants';
@@ -27,7 +26,7 @@ const buttonLinks = [
 ];
 
 const Card = ({ title, stack, thumbnail, ...links }) => {
-  const btnBg = useColorModeValue('gray.100', 'gray.700');
+	const btnBg = useColorModeValue('gray.100', 'gray.700');
 	return (
 		<Box
 			p={5}
@@ -59,11 +58,11 @@ const Card = ({ title, stack, thumbnail, ...links }) => {
 						borderRadius='8px'
 					/>
 				</AspectRatio>
-				<HStack width='100%' justifyContent='flex-end'>
+				<HStack width='100%' justifyContent='flex-end' style={{ marginTop: '1rem' }}>
 					{buttonLinks.map((btnLink) => (
 						<Link
 							href={links[btnLink.link]}
-              key={btnLink.label}
+							key={btnLink.label}
 							target='_blank'
 							size='sm'
 							background={btnBg}
@@ -89,7 +88,16 @@ const Projects = () => {
 		>
 			<Center p={5} pt={{ md: 8 }}>
 				<Text textAlign='center'>
-					Here are the <Text display='inline' borderBottomColor='gray.500' borderBottomWidth='2px' pb={1}>projects</Text> i worked on so far!
+					Here are the{' '}
+					<Text
+						display='inline'
+						borderBottomColor='gray.500'
+						borderBottomWidth='2px'
+						pb={1}
+					>
+						projects
+					</Text>{' '}
+					i worked on so far!
 				</Text>
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>

@@ -4,18 +4,12 @@ import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, HStack, Text } from '@chakra-ui/layout';
 import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-
-const ROUTES = [
-  { to: '/', label: 'HOME' },
-  { to: '/skills', label: 'SKILLS' },
-  { to: '/projects', label: 'PROJECTS' },
-  { to: '/resume', label: 'RESUME' },
-  { to: '/contact', label: 'CONTACT' },
-]
+import { ROUTES } from '../utils/constants';
 
 const Header = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
-  const navColor = useColorModeValue('#000', '#fff');
+	const navMenuColor = useColorModeValue('#000', '#fff');
+	const navMenuBgColor = useColorModeValue('#EDF2F7', '#3A4E5A') 
 
 	return (
 		<Box
@@ -33,20 +27,20 @@ const Header = () => {
 						display={{ base: 'none', md: 'block' }}
 						spacing={{ md: '6', lg: '10', xl: '16' }}
 					>
-						{
-              ROUTES.map(({ to, label }) => (
-                <Text
-                  as={NavLink}
-                  to={to}
-                  fontSize='small'
-                  letterSpacing={{ md: '2px', lg: '4px' }}
-                  style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })}
-				  key={label}
-                >
-                  {label}
-                </Text>
-              ))
-            }
+						{ROUTES.map(({ to, label }) => (
+							<Text
+								as={NavLink}
+								to={to}
+								fontSize='small'
+								letterSpacing={{ md: '2px', lg: '4px' }}
+								style={({ isActive }) => ({
+									color: isActive ? navMenuColor : '#858585',
+								})}
+								key={label}
+							>
+								{label}
+							</Text>
+						))}
 					</HStack>
 					<Button onClick={toggleColorMode}>
 						{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -55,11 +49,19 @@ const Header = () => {
 						<Menu>
 							<MenuButton as={IconButton} icon={<HamburgerIcon />} />
 							<MenuList>
-                {
-                  ROUTES.map(({ to, label }) => (
-                    <MenuItem as={NavLink} to={to} style={({ isActive }) => ({ color: isActive ? navColor : '#858585' })} key={label}>{label}</MenuItem>
-                  ))
-                }
+								{ROUTES.map(({ to, label }) => (
+									<MenuItem
+										as={NavLink}
+										to={to}
+										style={({ isActive }) => ({
+											color: isActive ? navMenuColor : '#858585',
+											background: isActive ? navMenuBgColor : 'transparent'
+										})}
+										key={label}
+									>
+										{label}
+									</MenuItem>
+								))}
 							</MenuList>
 						</Menu>
 					</Box>

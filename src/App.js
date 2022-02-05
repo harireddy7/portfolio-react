@@ -32,3 +32,8 @@ const App = () => {
 };
 
 export default App;
+
+
+/*
+	1. Refactor theme colors & standarize text and background colors
+*/

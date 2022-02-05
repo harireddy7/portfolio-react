@@ -5,13 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const theme = extendTheme({
-	fonts: {
-		body: 'Outfit',
-		heading: 'Outfit',
-	},
-});
+import theme from './theme';
 
 ReactDOM.render(
 	<React.StrictMode>
