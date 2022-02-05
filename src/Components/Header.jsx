@@ -1,15 +1,13 @@
-import { Button, IconButton } from '@chakra-ui/button';
+import { Button } from '@chakra-ui/button';
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
-import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, HStack, Text } from '@chakra-ui/layout';
-import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../utils/constants';
 
 const Header = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	const navMenuColor = useColorModeValue('#000', '#fff');
-	const navMenuBgColor = useColorModeValue('#EDF2F7', '#3A4E5A') 
 
 	return (
 		<Box
@@ -45,26 +43,6 @@ const Header = () => {
 					<Button onClick={toggleColorMode}>
 						{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
 					</Button>
-					<Box display={{ md: 'none' }}>
-						<Menu>
-							<MenuButton as={IconButton} icon={<HamburgerIcon />} />
-							<MenuList>
-								{ROUTES.map(({ to, label }) => (
-									<MenuItem
-										as={NavLink}
-										to={to}
-										style={({ isActive }) => ({
-											color: isActive ? navMenuColor : '#858585',
-											background: isActive ? navMenuBgColor : 'transparent'
-										})}
-										key={label}
-									>
-										{label}
-									</MenuItem>
-								))}
-							</MenuList>
-						</Menu>
-					</Box>
 				</HStack>
 			</HStack>
 		</Box>

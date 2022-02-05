@@ -1,8 +1,9 @@
+export const MOBILE_DEVICES = ['base', 'sm'];
+
 export const ROUTES = [
 	{ to: '/', label: 'HOME' },
 	{ to: '/skills', label: 'SKILLS' },
 	{ to: '/projects', label: 'PROJECTS' },
-	{ to: '/resume', label: 'RESUME' },
 	{ to: '/contact', label: 'CONTACT' },
 ];
 

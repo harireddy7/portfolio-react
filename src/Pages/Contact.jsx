@@ -18,14 +18,17 @@ const Contact = () => {
 						borderBottomColor='gray.500'
 						borderBottomWidth='1px'
 					>
-						Page under development, stay tuned!
-					</Text>{' '}
+						Contact
+					</Text>
 					<Image
 						borderRadius='full'
 						boxSize={{ base: '90vw', sm: '450px', lg: '550px' }}
 						src='/images/under-dev.svg'
 						alt='under development'
 					/>
+					<Text>
+						Page under development, stay tuned!
+					</Text>
 				</VStack>
 			</Center>
 		</Box>

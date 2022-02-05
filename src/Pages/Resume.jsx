@@ -2,30 +2,28 @@ import { Image } from '@chakra-ui/image';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Box, Center, Text, VStack } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import { Button } from '@chakra-ui/button';
 
 const Resume = () => {
 	useDocumentTitle();
+
+	const downloadResume = () => {
+		window.open('https://github.com/harireddy7/Web-Portfolio/blob/master/assets/Hari-Kotha-Resume.pdf')
+	}
+
 	return (
 		<Box
-			minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }}
+			minHeight={{ base: '150px' }}
 			background={useColorModeValue('gray.50', 'black')}
 			p={5}
 		>
-			<Center minHeight='calc(100vh - 250px)'>
+			<Center>
 				<VStack>
-					<Text
-						display='inline'
-						borderBottomColor='gray.500'
-						borderBottomWidth='1px'
-					>
-						Page under development, stay tuned!
-					</Text>{' '}
-					<Image
-						borderRadius='full'
-						boxSize={{ base: '90vw', sm: '450px', lg: '550px' }}
-						src='/images/under-dev.svg'
-						alt='under development'
-					/>
+					<Box p={10}>
+						<Button onClick={downloadResume} fontWeight='light'>
+							Checkout my resume
+						</Button>
+					</Box>
 				</VStack>
 			</Center>
 		</Box>
