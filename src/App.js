@@ -21,7 +21,7 @@ const Home = () => {
 			<SkillsLazy />
 			<Spacer id='projects' height='50px' />
 			<ProjectsLazy />
-			<Spacer id='contact' height='50px' />
+			<Spacer id='contact' height='65px' />
 			<ContactLazy />
 			<FooterLazy />
 		</Box>
