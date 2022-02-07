@@ -1,13 +1,25 @@
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useBreakpoint } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/button';
 import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, HStack, Text } from '@chakra-ui/layout';
-import { NavLink } from 'react-router-dom';
-import { ROUTES } from '../utils/constants';
+import { MOBILE_DEVICES, ROUTES } from '../utils/constants';
 
 const Header = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	const navMenuColor = useColorModeValue('#000', '#fff');
+	const breakpoint = useBreakpoint();
+	const isMobile = MOBILE_DEVICES.includes(breakpoint);
+	const navigate = useNavigate();
+
+	const navigateHome = () => {
+		if (isMobile) {
+    		document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+		} else {
+			navigate('/');
+		}
+	}
 
 	return (
 		<Box
@@ -20,7 +32,9 @@ const Header = () => {
 			width={{ base: '100vw', md: '100%' }}
 		>
 			<HStack justifyContent={{ base: 'space-between', md: 'space-around' }}>
-				<Text>&lt;HARI KOTHA /&gt;</Text>
+				<Box cursor='pointer' onClick={navigateHome}>
+					<Text>&lt;HARI KOTHA /&gt;</Text>
+				</Box>
 
 				<HStack justifyContent='space-between' spacing={{ base: 4, md: 12 }}>
 					<HStack

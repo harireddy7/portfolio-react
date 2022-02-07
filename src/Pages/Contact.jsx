@@ -34,6 +34,7 @@ const Contact = () => {
 		<Box
 			background={useColorModeValue('gray.50', 'black')}
 			p={{ base: 5, md: 20 }}
+			minHeight={{ md: 'calc(100vh - 120px)' }}
 		>
 			<Center>
 				<VStack>
