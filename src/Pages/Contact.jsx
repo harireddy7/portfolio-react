@@ -23,7 +23,7 @@ const Card = ({ username, icon }) => {
 			boxShadow='sm'
 		>
 			<Image width='50px' height='40px' src={`/images/${icon}`} alt={icon} />
-			<Text>{username}</Text>
+			<Link>{username}</Link>
 		</VStack>
 	);
 };
