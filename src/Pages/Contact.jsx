@@ -12,7 +12,6 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
 import { SOCIAL_LINKS } from '../utils/constants';
 
 const Card = ({ username, icon }) => {
-	const color = useColorModeValue('gray.100', 'gray.900');
 	const bgColor = useColorModeValue('gray.100', 'gray.900');
 	return (
 		<VStack
