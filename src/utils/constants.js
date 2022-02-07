@@ -56,3 +56,28 @@ export const PROJECTS = [
 		live: '#',
 	},
 ];
+
+export const SOCIAL_LINKS = [
+	{
+		username: '/harireddy7',
+		link: 'https://github.com/harireddy7',
+		icon: 'github.svg'
+	},
+	{
+		username: '/harikotha13',
+		link: 'https://www.linkedin.com/in/harikotha13/',
+		icon: 'linkedin.svg'
+	},
+	{
+		username: '/harikotha07',
+		link: 'https://twitter.com/harikotha07',
+		icon: 'twitter.svg'
+	},
+	{
+		username: '/harireddy7',
+		link: 'https://dev.to/harireddy7',
+		icon: 'devto.png'
+	},
+];
+
+export const PAGE_LINKS = ['/about', '/skills', '/projects', '/contact'];

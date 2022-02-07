@@ -15,6 +15,9 @@ const Header = () => {
 			background={useColorModeValue('white', 'gray.900')}
 			shadow='md'
 			borderRadius={{ base: 0, sm: 'md' }}
+			position={{ base: 'fixed', md: 'relative' }}
+			zIndex='1000'
+			width={{ base: '100vw', md: '100%' }}
 		>
 			<HStack justifyContent={{ base: 'space-between', md: 'space-around' }}>
 				<Text>&lt;HARI KOTHA /&gt;</Text>

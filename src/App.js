@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Box } from '@chakra-ui/layout';
+import { Box, Spacer } from '@chakra-ui/layout';
 import { Routes, Route } from 'react-router-dom';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import './App.css';
@@ -10,17 +10,36 @@ import { MOBILE_DEVICES } from './utils/constants';
 const AboutLazy = lazy(() => import('./Pages/About'));
 const SkillsLazy = lazy(() => import('./Pages/Skills'));
 const ProjectsLazy = lazy(() => import('./Pages/Projects'));
-const ResumeLazy = lazy(() => import('./Pages/Resume'));
 const ContactLazy = lazy(() => import('./Pages/Contact'));
+const FooterLazy = lazy(() => import('./Components/Footer'));
+
+const Home = () => {
+	return (
+		<Box pt='100px'>
+			<AboutLazy />
+			<Spacer id='skills' height='50px' />
+			<SkillsLazy />
+			<Spacer id='projects' height='50px' />
+			<ProjectsLazy />
+			<Spacer id='contact' height='50px' />
+			<ContactLazy />
+			<FooterLazy />
+		</Box>
+	);
+};
 
 const App = () => {
 	const breakpoint = useBreakpoint();
 	const isMobile = MOBILE_DEVICES.includes(breakpoint);
+	if (isMobile) {
+		document.title = 'Home | Hari Kotha'
+	}
 
 	return (
 		<Box
-			p={{ base: 0, sm: 5 }}
+			p={{ base: 0, md: 5 }}
 			background={useColorModeValue('gray.50', 'black')}
+			id='about'
 		>
 			<Header />
 			<Suspense fallback={<div>Loading...</div>}>
@@ -33,12 +52,9 @@ const App = () => {
 						<Route path='*' element={<div>NotFound</div>} />
 					</Routes>
 				) : (
-					<>
-						<AboutLazy />
-						<SkillsLazy />
-						<ProjectsLazy />
-						<ContactLazy />
-					</>
+					<Routes>
+						<Route path='*' element={<Home />} />
+					</Routes>
 				)}
 			</Suspense>
 		</Box>
