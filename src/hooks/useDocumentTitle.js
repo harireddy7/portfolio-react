@@ -7,7 +7,7 @@ const useDocumentTitle = () => {
     useEffect(() => {
         const path = pathname.split('/')[1] || 'about';
 		document.title = PAGE_TITLES[path];
-	}, []);
+	}, [pathname]);
     return null;
 }
 

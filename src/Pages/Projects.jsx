@@ -25,7 +25,7 @@ const buttonLinks = [
 	},
 ];
 
-const Card = ({ title, stack, thumbnail, ...links }) => {
+const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 	const btnBg = useColorModeValue('gray.100', 'gray.700');
 	return (
 		<Box
@@ -41,7 +41,7 @@ const Card = ({ title, stack, thumbnail, ...links }) => {
 		>
 			<Stack>
 				<Stack mb={2}>
-					<Text fontSize='xl'>{title}</Text>
+					<Text fontSize='xl'>{title} {underdev && <Text as='span' fontSize='sm'>(Under development...)</Text>}</Text>
 					<HStack flexWrap={{ base: 'nowrap', sm: 'nowrap' }}>
 						{stack.map((tech) => (
 							<Tag key={tech} size='sm'>
@@ -58,26 +58,28 @@ const Card = ({ title, stack, thumbnail, ...links }) => {
 						borderRadius='8px'
 					/>
 				</AspectRatio>
-				<HStack
-					width='100%'
-					justifyContent='flex-end'
-					style={{ marginTop: '1rem' }}
-				>
-					{buttonLinks.map((btnLink) => (
-						<Link
-							href={links[btnLink.link]}
-							key={btnLink.label}
-							target='_blank'
-							size='sm'
-							background={btnBg}
-							borderRadius='8px'
-							px={5}
-							py={1}
-						>
-							{btnLink.label}
-						</Link>
-					))}
-				</HStack>
+				{!underdev && (
+					<HStack
+						width='100%'
+						justifyContent='flex-end'
+						style={{ marginTop: '1rem' }}
+					>
+						{buttonLinks.map((btnLink) => (
+							<Link
+								href={links[btnLink.link]}
+								key={btnLink.label}
+								target='_blank'
+								size='sm'
+								background={btnBg}
+								borderRadius='8px'
+								px={5}
+								py={1}
+							>
+								{btnLink.label}
+							</Link>
+						))}
+					</HStack>
+				)}
 			</Stack>
 		</Box>
 	);

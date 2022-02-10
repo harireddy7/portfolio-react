@@ -35,7 +35,7 @@ export const PROJECTS = [
 		live: 'https://tictactoejs-dev.netlify.app/',
 	},
 	{
-		title: 'key user solutions',
+		title: 'Key User Solutions',
 		stack: ['Javascript', 'React.js', 'Material UI'],
 		thumbnail: 'keyusersolutions.jpg',
 		github: 'https://github.com/harireddy7/KeyUserSolutions',
@@ -54,6 +54,7 @@ export const PROJECTS = [
 		thumbnail: 'under-dev.svg',
 		github: '#',
 		live: '#',
+		underdev: true,
 	},
 ];
 

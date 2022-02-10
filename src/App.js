@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import { Box, Spacer } from '@chakra-ui/layout';
 import { Routes, Route } from 'react-router-dom';
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import './App.css';
 import Header from './Components/Header';
 import { useBreakpoint } from '@chakra-ui/media-query';
 import { MOBILE_DEVICES } from './utils/constants';
@@ -62,7 +61,3 @@ const App = () => {
 };
 
 export default App;
-
-/*
-	1. Refactor theme colors & standarize text and background colors
-*/

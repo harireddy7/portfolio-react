@@ -1,6 +1,5 @@
-import { Image } from '@chakra-ui/image';
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import { Box, Center, Text, VStack } from '@chakra-ui/layout';
+import { Box, Center, VStack } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { Button } from '@chakra-ui/button';
 
