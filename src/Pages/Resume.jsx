@@ -7,7 +7,7 @@ const Resume = () => {
 	useDocumentTitle();
 
 	const downloadResume = () => {
-		window.open('https://github.com/harireddy7/Web-Portfolio/blob/master/assets/Hari-Kotha-Resume.pdf')
+		window.open('./Hari-Kotha-Resume.pdf')
 	}
 
 	return (
