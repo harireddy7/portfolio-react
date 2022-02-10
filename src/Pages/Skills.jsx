@@ -22,7 +22,7 @@ const Card = ({ label, icon }) => {
 			}}
 		>
 			<Stack direction='row' align='center' spacing={3}>
-				<Image boxSize='50px' src={`/images/${icon}`} alt={icon} />
+				<Image boxSize='50px' src={`/images/${icon}`} alt={icon} loading='lazy' />
 				<Text>{label}</Text>
 			</Stack>
 		</Box>

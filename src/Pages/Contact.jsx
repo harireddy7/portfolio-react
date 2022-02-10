@@ -22,7 +22,7 @@ const Card = ({ username, icon }) => {
 			borderRadius='2xl'
 			boxShadow='sm'
 		>
-			<Image width='50px' height='40px' src={`/images/${icon}`} alt={icon} />
+			<Image width='50px' height='40px' src={`/images/${icon}`} alt={icon} loading='lazy' />
 			<Link>{username}</Link>
 		</VStack>
 	);

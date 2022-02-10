@@ -1,31 +1,12 @@
-import { lazy, Suspense } from 'react';
-import { Box, Spacer } from '@chakra-ui/layout';
+import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Box } from '@chakra-ui/layout';
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import Header from './Components/Header';
 import { useBreakpoint } from '@chakra-ui/media-query';
 import { MOBILE_DEVICES } from './utils/constants';
-
-const AboutLazy = lazy(() => import('./Pages/About'));
-const SkillsLazy = lazy(() => import('./Pages/Skills'));
-const ProjectsLazy = lazy(() => import('./Pages/Projects'));
-const ContactLazy = lazy(() => import('./Pages/Contact'));
-const FooterLazy = lazy(() => import('./Components/Footer'));
-
-const Home = () => {
-	return (
-		<Box pt='100px'>
-			<AboutLazy />
-			<Spacer id='skills' height='50px' />
-			<SkillsLazy />
-			<Spacer id='projects' height='50px' />
-			<ProjectsLazy />
-			<Spacer id='contact' height='65px' />
-			<ContactLazy />
-			<FooterLazy />
-		</Box>
-	);
-};
+import { AboutLazy, ProjectsLazy, SkillsLazy, ContactLazy } from './Pages/index';
+import Header from './Components/Header';
+import Home from './Components/Home';
 
 const App = () => {
 	const breakpoint = useBreakpoint();

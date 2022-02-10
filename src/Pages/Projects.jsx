@@ -56,6 +56,7 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 						alt={thumbnail}
 						objectFit='cover'
 						borderRadius='8px'
+						loading='lazy'
 					/>
 				</AspectRatio>
 				{!underdev && (
