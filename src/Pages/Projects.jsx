@@ -75,6 +75,7 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 								borderRadius='8px'
 								px={5}
 								py={1}
+								id={`${btnLink.label} - ${title}`}
 							>
 								{btnLink.label}
 							</Link>

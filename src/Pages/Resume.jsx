@@ -19,7 +19,7 @@ const Resume = () => {
 			<Center>
 				<VStack>
 					<Box p={10}>
-						<Button onClick={downloadResume} fontWeight='light'>
+						<Button onClick={downloadResume} fontWeight='light' id='download-resume'>
 							Checkout my resume
 						</Button>
 					</Box>

@@ -28,6 +28,11 @@ const Card = ({ username, icon }) => {
 	);
 };
 
+const getSocialId = ({ username, icon }) => {
+	const domain = icon.split('.')[0];
+	return `${domain} - ${username}`;
+}
+
 const Contact = () => {
 	useDocumentTitle();
 	return (
@@ -70,6 +75,7 @@ const Contact = () => {
 								target='_blank'
 								ml='1rem !important'
 								mb='1rem !important'
+								id={getSocialId(social)}
 							>
 								<Card {...social} />
 							</Link>
