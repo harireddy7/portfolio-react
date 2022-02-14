@@ -7,8 +7,8 @@ const Resume = () => {
 	useDocumentTitle();
 
 	const downloadResume = () => {
-		window.open('./Hari-Kotha-Resume.pdf')
-	}
+		window.open('./Hari-Kotha-Resume.pdf');
+	};
 
 	return (
 		<Box
@@ -19,7 +19,7 @@ const Resume = () => {
 			<Center>
 				<VStack>
 					<Box p={10}>
-						<Button onClick={downloadResume} fontWeight='light' id='download-resume'>
+						<Button onClick={downloadResume} fontWeight='light'>
 							Checkout my resume
 						</Button>
 					</Box>

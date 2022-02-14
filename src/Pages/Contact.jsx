@@ -4,11 +4,6 @@ import { Box, Center, Link, SimpleGrid, Text, VStack } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { SOCIAL_LINKS } from '../utils/constants';
 
-const getSocialId = ({ username, icon, label }) => {
-	const domain = icon.split('.')[0];
-	return `${domain} - ${username}`;
-};
-
 const Card = ({ username, icon }) => {
 	const bgColor = useColorModeValue('gray.100', 'gray.900');
 	return (
@@ -19,7 +14,6 @@ const Card = ({ username, icon }) => {
 			p={5}
 			borderRadius='2xl'
 			boxShadow='sm'
-			className={getSocialId({ username, icon })}
 		>
 			<Image
 				width='50px'
@@ -27,11 +21,8 @@ const Card = ({ username, icon }) => {
 				src={`/images/${icon}`}
 				alt={icon}
 				loading='lazy'
-				className={getSocialId({ username, icon })}
 			/>
-			<Link className={getSocialId({ username, icon })}>
-				{username}
-			</Link>
+			<Text>{username}</Text>
 		</VStack>
 	);
 };
@@ -78,7 +69,6 @@ const Contact = () => {
 								target='_blank'
 								ml='1rem !important'
 								mb='1rem !important'
-								className={getSocialId({ ...social })}
 							>
 								<Card {...social} />
 							</Link>
