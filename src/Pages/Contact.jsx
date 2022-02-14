@@ -1,15 +1,13 @@
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { Image } from '@chakra-ui/image';
-import {
-	Box,
-	Center,
-	Link,
-	SimpleGrid,
-	Text,
-	VStack,
-} from '@chakra-ui/layout';
+import { Box, Center, Link, SimpleGrid, Text, VStack } from '@chakra-ui/layout';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { SOCIAL_LINKS } from '../utils/constants';
+
+const getSocialId = ({ username, icon, label }) => {
+	const domain = icon.split('.')[0];
+	return `${domain} - ${username}`;
+};
 
 const Card = ({ username, icon }) => {
 	const bgColor = useColorModeValue('gray.100', 'gray.900');
@@ -21,17 +19,22 @@ const Card = ({ username, icon }) => {
 			p={5}
 			borderRadius='2xl'
 			boxShadow='sm'
+			className={getSocialId({ username, icon })}
 		>
-			<Image width='50px' height='40px' src={`/images/${icon}`} alt={icon} loading='lazy' />
-			<Link>{username}</Link>
+			<Image
+				width='50px'
+				height='40px'
+				src={`/images/${icon}`}
+				alt={icon}
+				loading='lazy'
+				className={getSocialId({ username, icon })}
+			/>
+			<Link className={getSocialId({ username, icon })}>
+				{username}
+			</Link>
 		</VStack>
 	);
 };
-
-const getSocialId = ({ username, icon }) => {
-	const domain = icon.split('.')[0];
-	return `${domain} - ${username}`;
-}
 
 const Contact = () => {
 	useDocumentTitle();
@@ -75,7 +78,7 @@ const Contact = () => {
 								target='_blank'
 								ml='1rem !important'
 								mb='1rem !important'
-								id={getSocialId(social)}
+								className={getSocialId({ ...social })}
 							>
 								<Card {...social} />
 							</Link>
