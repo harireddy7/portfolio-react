@@ -7,7 +7,7 @@ const Resume = () => {
 	useDocumentTitle();
 
 	const downloadResume = () => {
-		window.open('./Hari-Kotha-Resume.pdf');
+		window.open('./Resume-Hari.pdf');
 	};
 
 	return (
