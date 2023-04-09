@@ -15,11 +15,11 @@ const Header = () => {
 
 	const navigateHome = () => {
 		if (isMobile) {
-    		document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+			document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 		} else {
 			navigate('/');
 		}
-	}
+	};
 
 	return (
 		<Box
@@ -29,7 +29,7 @@ const Header = () => {
 			borderRadius={{ base: 0, sm: 'md' }}
 			position={{ base: 'fixed', md: 'relative' }}
 			zIndex='1000'
-			width={{ base: '100vw', md: '100%' }}
+			width={{ base: '100%', md: '100%' }}
 		>
 			<HStack justifyContent={{ base: 'space-between', md: 'space-around' }}>
 				<Box cursor='pointer' onClick={navigateHome}>

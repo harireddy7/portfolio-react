@@ -1,14 +1,14 @@
 import { extendTheme } from '@chakra-ui/react';
 
-const hideFocus = ({
-    baseStyle: {
-        _focus: {
-            '&:not(:focus-visible)': {
-                boxShadow: 'none'
-            }
-        }
-    }
-})
+const hideFocus = {
+	baseStyle: {
+		_focus: {
+			'&:not(:focus-visible)': {
+				boxShadow: 'none',
+			},
+		},
+	},
+};
 
 export default extendTheme({
 	fonts: {
@@ -17,6 +17,7 @@ export default extendTheme({
 	},
 	components: {
 		Button: hideFocus,
-		Link: hideFocus
-	}
+		Link: hideFocus,
+	},
+	config: { initialColorMode: 'dark' },
 });

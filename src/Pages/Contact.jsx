@@ -8,20 +8,14 @@ const Card = ({ username, icon }) => {
 	const bgColor = useColorModeValue('gray.100', 'gray.900');
 	return (
 		<VStack
-			maxWidth='200px'
-			maxHeight='200px'
 			background={bgColor}
-			p={5}
 			borderRadius='2xl'
-			boxShadow='sm'
+			p={{ base: 3, sm: 5 }}
+			minWidth={{ base: '100px', sm: '120px' }}
+			maxWidth='150px'
+			maxHeight='200px'
 		>
-			<Image
-				width='50px'
-				height='40px'
-				src={`/images/${icon}`}
-				alt={icon}
-				loading='lazy'
-			/>
+			<Image width='50px' height='40px' src={`/images/${icon}`} alt={icon} loading='lazy' />
 			<Text>{username}</Text>
 		</VStack>
 	);
@@ -39,6 +33,7 @@ const Contact = () => {
 				<VStack>
 					<Text
 						display='inline'
+						as='span'
 						borderBottomColor='gray.500'
 						borderBottomWidth='2px'
 						mb={10}
@@ -49,19 +44,17 @@ const Contact = () => {
 						I'm happy to talk about new{' '}
 						<Text
 							display='inline'
+							as='span'
 							borderBottomColor='gray.500'
 							borderBottomWidth='2px'
 							mb={10}
 						>
 							oppurtunities
 						</Text>{' '}
-						and working together. If you'd like to get in touch with me, ping me
-						on any of these social media platforms
+						and working together. If you'd like to get in touch with me, ping me on any of these
+						social media platforms
 					</Text>
-					<SimpleGrid
-						spacing={{ base: '5', md: '8' }}
-						columns={{ base: 1, sm: 2, md: 4 }}
-					>
+					<SimpleGrid spacing={{ base: '5', md: '8' }} columns={{ base: 2, md: 4 }}>
 						{SOCIAL_LINKS.map((social) => (
 							<Link
 								href={social.link}

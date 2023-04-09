@@ -15,33 +15,20 @@ const About = () => {
 		>
 			<Center minHeight={{ md: 'calc(100vh - 250px)' }}>
 				<VStack>
-					<Image
-						borderRadius='full'
-						boxSize='120px'
-						src='/images/thumb.jpeg'
-						alt='hari kotha cover'
-					/>
-					<Text fontSize={{ base: '3xl', md: '7xl' }} fontWeight='600'>
+					<Image borderRadius='6px' maxH='300px' src='/images/thumb.jpg' alt='hari kotha cover' />
+					<Text fontSize={{ base: '3xl', md: '5xl' }} fontWeight='600'>
 						Hi, I'm HARI 👋
 					</Text>
-					<Text fontSize={{ base: 'xl', md: '4xl' }}>
-						a passionate{' '}
-						<Text
-							display='inline'
-							borderBottomColor='gray.500'
-							borderBottomWidth='5px'
-						>
+					<Text fontSize={{ base: 'xl', md: '2xl' }}>
+						Passionate{' '}
+						<Text as='span' display='inline' borderBottomColor='gray.500' borderBottomWidth='5px'>
 							Web Developer
 						</Text>{' '}
 						from India.
 					</Text>
-					<Text fontSize={{ base: 'xl', md: '4xl' }} as='span'>
+					<Text fontSize={{ base: 'xl', md: '2xl' }} as='span' maxW={{ base: '340px', sm: '100%' }}>
 						I specialize in building responsive UI with modern{' '}
-						<Text
-							display='inline'
-							borderBottomColor='gray.500'
-							borderBottomWidth='5px'
-						>
+						<Text display='inline' borderBottomColor='gray.500' borderBottomWidth='5px'>
 							JavaScript
 						</Text>{' '}
 						tools

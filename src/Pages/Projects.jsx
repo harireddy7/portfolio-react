@@ -1,14 +1,5 @@
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import {
-	AspectRatio,
-	Box,
-	Center,
-	HStack,
-	Link,
-	SimpleGrid,
-	Stack,
-	Text,
-} from '@chakra-ui/layout';
+import { AspectRatio, Box, Center, HStack, Link, SimpleGrid, Stack, Text } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
 import { Tag } from '@chakra-ui/tag';
 import useDocumentTitle from '../hooks/useDocumentTitle';
@@ -41,9 +32,9 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 		>
 			<Stack>
 				<Stack mb={2}>
-					<Text fontSize='xl'>{title} {underdev && <Text as='span' fontSize='sm'>(Under development...)</Text>}</Text>
+					<Text fontSize='xl'>{title}</Text>
 					<HStack flexWrap={{ base: 'nowrap', sm: 'nowrap' }}>
-						{stack.map((tech) => (
+						{stack?.map((tech) => (
 							<Tag key={tech} size='sm'>
 								{tech}
 							</Tag>
@@ -60,11 +51,7 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 					/>
 				</AspectRatio>
 				{!underdev && (
-					<HStack
-						width='100%'
-						justifyContent='flex-end'
-						style={{ marginTop: '1rem' }}
-					>
+					<HStack width='100%' justifyContent='flex-end' style={{ marginTop: '1rem' }}>
 						{buttonLinks.map((btnLink) => (
 							<Link
 								href={links[btnLink.link]}
@@ -99,6 +86,7 @@ const Projects = () => {
 					Here are the{' '}
 					<Text
 						display='inline'
+						as='span'
 						borderBottomColor='gray.500'
 						borderBottomWidth='2px'
 						pb='0.1rem'
@@ -110,10 +98,7 @@ const Projects = () => {
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>
 				<Center>
-					<SimpleGrid
-						spacing={{ base: '5', md: '8' }}
-						columns={{ base: 1, md: 2, lg: 3 }}
-					>
+					<SimpleGrid spacing={{ base: '5', md: '8' }} columns={{ base: 1, md: 2, lg: 3 }}>
 						{PROJECTS.map((project) => (
 							<Card {...project} key={project.title} />
 						))}

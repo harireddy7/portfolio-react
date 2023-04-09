@@ -7,11 +7,12 @@ import { SKILLS } from '../utils/constants';
 const Card = ({ label, icon }) => {
 	return (
 		<Box
-			p={5}
+			py={3}
+			px={0}
 			bg='white'
 			borderRadius='xl'
-			minWidth={{ base: '280px', sm: '200px', md: '280px' }}
-			maxWidth={{ base: '300px', md: '350px' }}
+			minWidth={{ base: '100px', sm: '150px' }}
+			maxWidth='200px'
 			shadow='sm'
 			background={useColorModeValue('white', 'gray.900')}
 			color={useColorModeValue('black', 'white')}
@@ -21,9 +22,9 @@ const Card = ({ label, icon }) => {
 				transform: 'translateY(-5px)',
 			}}
 		>
-			<Stack direction='row' align='center' spacing={3}>
+			<Stack direction='column' align='center' spacing={3}>
 				<Image boxSize='50px' src={`/images/${icon}`} alt={icon} loading='lazy' />
-				<Text>{label}</Text>
+				<Text m='5px 0 0'>{label}</Text>
 			</Stack>
 		</Box>
 	);
@@ -42,6 +43,7 @@ const Skills = () => {
 					Here are the{' '}
 					<Text
 						display='inline'
+						as='span'
 						borderBottomColor='gray.500'
 						borderBottomWidth='2px'
 						pb='0.1rem'
@@ -53,10 +55,7 @@ const Skills = () => {
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>
 				<Center>
-					<SimpleGrid
-						spacing={{ base: '5', md: '8' }}
-						columns={{ base: 1, sm: 2, lg: 3 }}
-					>
+					<SimpleGrid spacing={{ base: '5', md: '8' }} columns={{ base: 2, md: 3 }}>
 						{SKILLS.map((skill) => (
 							<Card {...skill} key={skill.label} />
 						))}

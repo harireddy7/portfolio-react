@@ -35,6 +35,13 @@ export const PROJECTS = [
 		live: 'https://tictactoejs-dev.netlify.app/',
 	},
 	{
+		title: 'CricWise',
+		stack: ['React.js', 'Chakra UI'],
+		thumbnail: 'cricwise.png',
+		github: 'https://github.com/harireddy7/CricWise',
+		live: 'https://cricwise.netlify.app/',
+	},
+	{
 		title: 'Key User Solutions',
 		stack: ['Javascript', 'React.js', 'Material UI'],
 		thumbnail: 'keyusersolutions.jpg',
@@ -49,8 +56,7 @@ export const PROJECTS = [
 		live: 'https://weatherjs-dev.netlify.app/',
 	},
 	{
-		title: 'Chat App',
-		stack: ['React.js', 'Node.js', 'Socket.io'],
+		title: 'More under development...',
 		thumbnail: 'under-dev.svg',
 		github: '#',
 		live: '#',
@@ -60,24 +66,24 @@ export const PROJECTS = [
 
 export const SOCIAL_LINKS = [
 	{
-		username: '/harireddy7',
-		link: 'https://github.com/harireddy7',
-		icon: 'github.svg'
-	},
-	{
 		username: '/harikotha13',
 		link: 'https://www.linkedin.com/in/harikotha13/',
-		icon: 'linkedin.svg'
+		icon: 'linkedin.svg',
 	},
 	{
 		username: '/harikotha07',
 		link: 'https://twitter.com/harikotha07',
-		icon: 'twitter.svg'
+		icon: 'twitter.svg',
+	},
+	{
+		username: '/harireddy7',
+		link: 'https://github.com/harireddy7',
+		icon: 'github.svg',
 	},
 	{
 		username: '/harireddy7',
 		link: 'https://dev.to/harireddy7',
-		icon: 'devto.png'
+		icon: 'devto.png',
 	},
 ];
 

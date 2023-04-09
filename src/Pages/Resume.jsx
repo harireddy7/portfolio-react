@@ -11,14 +11,10 @@ const Resume = () => {
 	};
 
 	return (
-		<Box
-			minHeight={{ base: '150px' }}
-			background={useColorModeValue('gray.50', 'black')}
-			p={5}
-		>
+		<Box w='100%' background={useColorModeValue('gray.50', 'black')} p={0}>
 			<Center>
 				<VStack>
-					<Box p={10}>
+					<Box mt='40px'>
 						<Button onClick={downloadResume} fontWeight='light'>
 							Checkout my resume
 						</Button>
