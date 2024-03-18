@@ -15,7 +15,7 @@ const Header = () => {
 
 	const navigateHome = () => {
 		if (isMobile) {
-			document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+			document.getElementById('root-app').scrollIntoView({ behavior: 'smooth' });
 		} else {
 			navigate('/');
 		}

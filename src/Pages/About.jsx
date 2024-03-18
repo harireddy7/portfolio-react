@@ -12,6 +12,7 @@ const About = () => {
 			minHeight={{ md: 'calc(100vh - 120px)' }}
 			background={useColorModeValue('gray.50', 'black')}
 			p={5}
+			id="about"
 		>
 			<Center minHeight={{ md: 'calc(100vh - 250px)' }}>
 				<VStack>

@@ -80,6 +80,7 @@ const Projects = () => {
 			minHeight={{ base: 'calc(100vh - 80px)', sm: 'calc(100vh - 120px)' }}
 			background={useColorModeValue('gray.50', 'black')}
 			my={{ base: 10, md: 0 }}
+			id="projects"
 		>
 			<Center p={5} pt={{ md: 8 }}>
 				<Text>

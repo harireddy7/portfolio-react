@@ -37,6 +37,7 @@ const Skills = () => {
 			minHeight={{ md: 'calc(100vh - 120px)' }}
 			background={useColorModeValue('gray.50', 'black')}
 			my={{ base: 10, md: 0 }}
+			id="skills"
 		>
 			<Center p={5} pt={{ md: 8 }}>
 				<Text>

@@ -4,11 +4,17 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   font-family: 'Outfit', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#projects,
+#skills,
+#about,
+#contact {
+  scroll-margin-top: 85px;
 }

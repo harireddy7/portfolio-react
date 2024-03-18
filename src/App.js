@@ -19,7 +19,7 @@ const App = () => {
 		<Box
 			p={{ base: 0, md: 5 }}
 			background={useColorModeValue('gray.50', 'black')}
-			id='about'
+			id='root-app'
 		>
 			<Header />
 			<Suspense fallback={<div>Loading...</div>}>
