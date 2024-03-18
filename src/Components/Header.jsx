@@ -23,6 +23,7 @@ const Header = () => {
 
 	return (
 		<Box
+			as='header'
 			p={5}
 			background={useColorModeValue('white', 'gray.900')}
 			shadow='md'
@@ -33,7 +34,7 @@ const Header = () => {
 		>
 			<HStack justifyContent={{ base: 'space-between', md: 'space-around' }}>
 				<Box cursor='pointer' onClick={navigateHome}>
-					<Text>&lt;HARI KOTHA /&gt;</Text>
+					<Text id='app-name'>&lt;HARI KOTHA /&gt;</Text>
 				</Box>
 
 				<HStack justifyContent='space-between' spacing={{ base: 4, md: 12 }}>

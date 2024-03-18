@@ -12,6 +12,7 @@ const Footer = () => {
 
 	return (
 		<Box
+			as='footer'
 			p={10}
 			background={bgColor}
 			boxShadow='sm'

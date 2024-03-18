@@ -18,3 +18,8 @@ code {
 #contact {
   scroll-margin-top: 85px;
 }
+
+#app-name,
+footer a {
+  user-select: none;
+}
