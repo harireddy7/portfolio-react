@@ -15,15 +15,22 @@ export const PAGE_TITLES = {
 };
 
 export const SKILLS = [
-	{ label: 'HTML 5', icon: 'html.svg' },
-	{ label: 'CSS', icon: 'css.svg' },
 	{ label: 'JavaScript', icon: 'javascript.svg' },
-	{ label: 'Bootstrap', icon: 'bootstrap.svg' },
+	{ label: 'Typescript', icon: 'typescript.svg' },
 	{ label: 'React.js', icon: 'reactjs.svg' },
 	{ label: 'Redux', icon: 'redux.svg' },
+	{ label: 'HTML 5', icon: 'html.svg' },
+	{ label: 'CSS', icon: 'css.svg' },
+	{ label: 'Jest', icon: 'jest.svg' },
+	{ label: 'Webpack', icon: 'webpack.svg' },
 	{ label: 'Node.js', icon: 'nodejs.svg' },
 	{ label: 'Express', icon: 'express.svg' },
+	{ label: 'MySQl', icon: 'mysql.svg' },
 	{ label: 'MongoDb', icon: 'mongodb.svg' },
+	{ label: 'Socket.io', icon: 'socketio.svg' },
+	{ label: 'Bootstrap', icon: 'bootstrap.svg' },
+	{ label: 'git', icon: 'git.svg' },
+	{ label: 'npm', icon: 'npm.svg' },
 ];
 
 export const PROJECTS = [
@@ -49,11 +56,10 @@ export const PROJECTS = [
 		live: 'https://keyusersolutions.netlify.app/',
 	},
 	{
-		title: 'WeatherJs',
-		stack: ['HTML5', 'CSS3', 'Bootstrap', 'Javascript'],
-		thumbnail: 'weatherjs.png',
-		github: 'https://github.com/harireddy7/WeatherJs',
-		live: 'https://weatherjs-dev.netlify.app/',
+		title: 'SQL Murder Mystery',
+		stack: ['SQL'],
+		thumbnail: 'sql-murder-mystery.png',
+		github: 'https://github.com/harireddy7/sql-murder-mystery',
 	},
 	{
 		title: 'More under development...',

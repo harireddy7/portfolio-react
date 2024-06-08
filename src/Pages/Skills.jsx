@@ -56,7 +56,7 @@ const Skills = () => {
 			</Center>
 			<Box p={{ base: 3, md: 10 }}>
 				<Center>
-					<SimpleGrid spacing={{ base: '5', md: '8' }} columns={{ base: 2, md: 3 }}>
+					<SimpleGrid spacing={{ base: '5', md: '8' }} columns={{ base: 2, md: 4 }}>
 						{SKILLS.map((skill) => (
 							<Card {...skill} key={skill.label} />
 						))}

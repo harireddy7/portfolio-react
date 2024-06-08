@@ -21,7 +21,6 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 	return (
 		<Box
 			p={5}
-			pt={8}
 			bg='white'
 			borderRadius='xl'
 			minWidth={{ base: 'calc(100vw - 50px)', sm: '400px', md: '280px' }}
@@ -52,7 +51,7 @@ const Card = ({ title, stack, thumbnail, underdev, ...links }) => {
 				</AspectRatio>
 				{!underdev && (
 					<HStack width='100%' justifyContent='flex-end' style={{ marginTop: '1rem' }}>
-						{buttonLinks.map((btnLink) => (
+						{buttonLinks.map((btnLink) => links[btnLink.link] && (
 							<Link
 								href={links[btnLink.link]}
 								key={btnLink.label}
